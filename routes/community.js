@@ -66,10 +66,13 @@ router.post('/',
         code: "RESOURCE_EXISTS"
       }]})
     }
+   let  slug=req.body.name
+    slug=slug.toLowerCase()
+    slug=slug.replaceAll(' ','-')
     let new_community=await Community.create({
       id:Snowflake.generate(),
       name: req.body.name,
-      slug:req.body.name.toLowerCase().replaceAll(' ','-')+'-'+Snowflake.generate(),
+      slug:slug+'-'+Snowflake.generate(),
       owner:user.id
     })
     let idCommunityAdmin=await Role.findOne({name:'Community Admin'})
