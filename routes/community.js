@@ -82,7 +82,7 @@ router.post('/',
         user:user.id
       }
     )
-    res.json({status:true,content:{data:new_community}})}
+    res.status(200).json({status:true,content:{data:new_community}})}
     catch(error){
       console.log(error.message);
       res.status(500).send(error)
