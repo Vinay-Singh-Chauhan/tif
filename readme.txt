@@ -34,17 +34,6 @@ Name	        URL
 Add Member	    POST /v1/member
 Remove Member	DELETE /v1/member/:id
 
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Some Peculiarities:
-
-*while Getting all members of a community the path variable id refers to the id of Community not name. Although we can go with name of the Community as well but i have implemented it for ID.
-
-for example : 
-this works  : /v1/community/7076125826367433158/members
-this does not work : /v1/community/bestever-community/members
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Kindly visit: https://github.com/Vinay-Singh-Chauhan/tif

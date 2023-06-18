@@ -163,8 +163,9 @@ function paginatedMembers() {
 
     try {
       // console.log(req.params.id)
-      size= await Member.countDocuments({community:req.params.id});
-      results = await Member.find({community:req.params.id})
+      let community=await Community.findOne({$or:[{id:req.params.id},{slug:req.params.id}]})
+      size= await Member.countDocuments({community:community.id});
+      results = await Member.find({community:community.id})
       .limit(limit)
         .skip(skipIndex)
         .exec();
