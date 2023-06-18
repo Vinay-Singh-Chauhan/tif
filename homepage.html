@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1>API Reference</h1>
+    <p>This Nodejs API is made for an SaaS Platform that enables user to make their communities and add members to it.</p>
+    <br>
+<hr>
+<br>
+<p>
+Following are the endpoints:
+</p>
+<h3>Category: Role</h3>
+<table>
+    <tr>
+      
+      <th>Name  :</th>
+      <th>URL</th>
+    </tr>
+    <tr>
+      <td>Create    </td>
+      <td>POST /v1/role</td>
+    </tr>
+    <tr>
+      <td>Get All   </td>
+      <td>GET /v1/role</td>
+    </tr>
+  </table>
+  <h3>Category: User</h3>
+<table>
+    <tr>
+        <th>Name    </th>
+      <th>URL</th>
+      
+    </tr>
+    <tr>
+      <td>Sign Up   </td>
+      <td>POST /v1/auth/signup</td>
+    </tr>
+    <tr>
+      <td>Sign in	</td>
+      <td>POST /v1/auth/signin</td>
+    </tr>
+    <tr>
+      <td>Get Me	</td>
+      <td>GET /v1/auth/me</td>
+    </tr>
+  </table>
+  <h3>Category: Community</h3>
+<table>
+    <tr>
+        <th>Name    </th>
+      <th>URL</th>
+      
+    </tr>
+    <tr>
+      <td>Create		</td>
+      <td>POST /v1/auth/signup</td>
+    </tr>
+    <tr>
+      <td>Sign in	</td>
+      <td>POST /v1/community</td>
+    </tr>
+    <tr>
+      <td>Get All	    	</td>
+      <td>GET /v1/community</td>
+    </tr>
+    <tr>
+      <td>Get All Members	 </td>
+      <td>GET /v1/community/:id/members *</td>
+    </tr>
+    <tr>
+      <td>Get My Owned Community    </td>
+      <td>GET /v1/community/me/owner</td>
+    </tr>
+    <tr>
+      <td>Get My Joined Community	</td>
+      <td>GET /v1/community/me/member</td>
+    </tr>
+  </table>
+  <h3>Category: Member</h3>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>URL</th>
+    </tr>
+    <tr>
+      <td>Add Member	</td>
+      <td>POST /v1/member</td>
+    </tr>
+    <tr>
+      <td>Remove Member</td>
+      <td>DELETE /v1/member/:id</td>
+    </tr>
+    <tr>
+      <td>Get Me	</td>
+      <td>GET /v1/auth/me</td>
+    </tr>
+  </table>
+
+<br>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<br>
+<h3>
+
+    Some Peculiarities:
+</h3>
+<p>
+
+    *while Getting all members of a community the path variable id refers to the id of Community not name. Although we can go with name of the Community as well but i have implemented it for ID.
+    
+</p>
+<p>
+
+    for example : <br>
+    this works  : /v1/community/7076125826367433158/members <br>
+    this does not work : /v1/community/bestever-community/members <br>
+</p>
+<br>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<br>
+Kindly visit: <a href="https://github.com/Vinay-Singh-Chauhan/tif">github https://github.com/Vinay-Singh-Chauhan/tif</a>
+    
+</body>
+</html>
