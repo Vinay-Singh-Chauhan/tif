@@ -67,8 +67,10 @@ router.post('/',
       }]})
     }
    let  slug=req.body.name
+   
+   
     slug=slug.toLowerCase()
-    slug=slug.replaceAll(' ','-')
+    slug=slug.replace(/\s/g,"-")
     let new_community=await Community.create({
       id:Snowflake.generate(),
       name: req.body.name,
