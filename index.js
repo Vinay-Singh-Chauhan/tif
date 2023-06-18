@@ -10,6 +10,7 @@ const port = process.env.PORT
 app.use(cors())
 connectToMongo();
 app.use(express.json())
+app.use('/',require('./routes/homepage'));
 app.use('/v1/auth',require('./routes/user'));
 app.use('/v1/role',require('./routes/role'));
 app.use('/v1/community',require('./routes/community'));

@@ -42,7 +42,7 @@ Some Peculiarities:
 *while Getting all members of a community the path variable id refers to the id of Community not name. Although we can go with name of the Community as well but i have implemented it for ID.
 
 for example : 
-this works  : /v1/community/7075912180877861243/members
+this works  : /v1/community/7076125826367433158/members
 this does not work : /v1/community/bestever-community/members
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
