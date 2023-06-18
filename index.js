@@ -22,4 +22,3 @@ app.use('/v1/member',require('./routes/member'));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-module.exports = app;
