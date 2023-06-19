@@ -150,6 +150,17 @@ router.get(
 
   async (req, res) => {
     jwttoken=req.headers.authorization;
+    if (!jwttoken) {
+      return res.status(400).json({
+        status: false,
+        errors: [
+          {
+            message: "You need to sign in to proceed.",
+            code: "NOT_SIGNEDIN",
+          },
+        ],
+      });
+    }
     TokenArray = jwttoken.split(" ");
     const token = TokenArray[1]
     if (!token || TokenArray[0]!='Bearer') {
