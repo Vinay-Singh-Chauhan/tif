@@ -8,18 +8,21 @@ const app = express()
 const port = process.env.PORT
 
 app.use(cors())
+// connect to database
 connectToMongo();
 app.use(express.json())
+// route for homepage
 app.use('/',require('./routes/homepage'));
+// route for auth
 app.use('/v1/auth',require('./routes/user'));
+// route for role
 app.use('/v1/role',require('./routes/role'));
+// route for community
 app.use('/v1/community',require('./routes/community'));
+// route for member
 app.use('/v1/member',require('./routes/member'));
-// app.use('/api/notes',require('./routes/notes'));
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
+
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Server listening on port ${port}`)
 })

@@ -1,7 +1,4 @@
 const mongoose = require("mongoose");
-// import { Snowflake } from "@theinternetfolks/snowflake";
-
-// console.log(Snowflake.generate({ timestamp: 1649157035498, shard_id: 4 }));
 const { Schema } = mongoose;
 
 const communitySchema = new Schema(

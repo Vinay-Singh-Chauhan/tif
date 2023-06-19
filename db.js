@@ -2,11 +2,17 @@ const mongoose=require('mongoose')
 const dotenv = require('dotenv');
 dotenv.config({ path: './.env.local' });
 const mongoURI=process.env.MONGO_URI;
-console.log(mongoURI)
+// database active at
+// console.log(mongoURI)
 const connectToMongo=()=>{
-    mongoose.connect(mongoURI).then(()=>{
-        console.log("done")
-    });
+    try{
+        mongoose.connect(mongoURI).then(()=>{
+            console.log("Database connected")
+        });
+    }catch(error){
+        console.log("Problem detected in connecting to Database");
+        console.log(error);
+    }
 
 }
 module.exports=connectToMongo;
