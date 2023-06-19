@@ -16,9 +16,11 @@ router.post(
 
   async (req, res) => {
     try {
-      const token = req.headers.authorization;
+      jwttoken=req.headers.authorization;
+    TokenArray = jwttoken.split(" ");
+    const token = TokenArray[1]
       // if token was recieved or not
-      if (!token) {
+      if (!token || TokenArray[0]!='Bearer') {
         return res.status(400).json({
           status: false,
           errors: [
@@ -146,9 +148,11 @@ router.delete(
 
   async (req, res) => {
     try {
-      const token = req.headers.authorization;
+      jwttoken=req.headers.authorization;
+    TokenArray = jwttoken.split(" ");
+    const token = TokenArray[1]
       // if token was recieved or not
-      if (!token) {
+      if (!token || TokenArray[0]!='Bearer') {
         return res.status(400).json({
           status: false,
           errors: [

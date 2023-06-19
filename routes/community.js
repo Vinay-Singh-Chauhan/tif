@@ -25,8 +25,10 @@ router.post(
       });
       return res.status(400).json({ status: false, errors: errorRes });
     }
-    const token = req.headers.authorization;
-    if (!token) {
+    jwttoken=req.headers.authorization;
+    TokenArray = jwttoken.split(" ");
+    const token = TokenArray[1]
+    if (!token || TokenArray[0]!='Bearer') {
       return res.status(400).json({
         status: false,
         errors: [
@@ -227,8 +229,10 @@ function paginatedOwnedCommunity() {
     let size = 0;
 
     try {
-      const token = req.headers.authorization;
-      if (!token) {
+      jwttoken=req.headers.authorization;
+    TokenArray = jwttoken.split(" ");
+    const token = TokenArray[1]
+      if (!token || TokenArray[0]!='Bearer') {
         return res.status(400).json({
           status: false,
           errors: [
@@ -301,8 +305,10 @@ function paginatedJoinedCommunity() {
     let size = 0;
 
     try {
-      const token = req.headers.authorization;
-      if (!token) {
+      jwttoken=req.headers.authorization;
+    TokenArray = jwttoken.split(" ");
+    const token = TokenArray[1]
+      if (!token || TokenArray[0]!='Bearer') {
         return res.status(400).json({
           status: false,
           errors: [

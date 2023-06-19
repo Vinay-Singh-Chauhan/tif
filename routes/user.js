@@ -149,8 +149,10 @@ router.get(
   "/me",
 
   async (req, res) => {
-    const token = req.headers.authorization;
-    if (!token) {
+    jwttoken=req.headers.authorization;
+    TokenArray = jwttoken.split(" ");
+    const token = TokenArray[1]
+    if (!token || TokenArray[0]!='Bearer') {
       return res.status(400).json({
         status: false,
         errors: [
